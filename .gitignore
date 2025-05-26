@@ -1,0 +1,13 @@
+# Virtual envs
+.venv/
+
+# Joblib / other caches
+cache/
+
+# Python bytecode
+__pycache__/
+*.py[cod]
+
+# Notebook outputs
+*.html
+*.log
