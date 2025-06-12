@@ -1,11 +1,36 @@
 # Flower-Species Classifier
 
+![CI](https://github.com/shaolinpat/flower_classifier/actions/workflows/ci.yml/badge.svg)
+![Coverage](https://img.shields.io/codecov/c/github/shaolinpat/flower_classifier)
+![Python](https://img.shields.io/badge/python-3.11-blue)
+![License](https://img.shields.io/badge/license-MIT-green)
+![Colab](https://colab.research.google.com/assets/colab-badge.svg)
+
+
+An end-to-end Iris-dataset classifier with EDA, 8 models, SHAP interpretation, and a Streamlit UI.
+
+## Table of Contents
+
+- [Overview](#overview)
+- [Features](#features)
+- [Quick Start](#quick-start)
+- [File Layout](#file-layout)
+- [Key Results](#key-results)
+- [Next Steps](#next-steps)
+- [License](#license)
+
+
+
+
+## Overview
 A compact end-to-end machine-learning project that:
 
 1. Explores the classic **Iris** dataset (150 samples, 4 numeric features, 3 species)  
 2. Benchmarks **8 traditional classifiers** with hyper-parameter search  
 3. Interprets the winning model with **SHAP**  
 4. Saves the best pipeline and serves it through a **Streamlit** app  
+
+---
 
 ---
 
@@ -20,6 +45,12 @@ A compact end-to-end machine-learning project that:
 ---
 
 ## Quick Start
+
+### 0) GitHub cloning
+```bash
+git clone git@github.com:shaolinpat/flower_classifier.git  
+cd flower_classifier  
+```
 
 ### 1) Environment setup
 
@@ -68,7 +99,7 @@ flower-classifier/
 │   └─ svm_iris.joblib        # saved best pipeline (SVM + scaler)
 ├─scripts/
 │   └─ verify_run.sh
-├─ environment.yaml
+├─ environment.yml
 ├─ flower_classifier.ipynb    # notebook with EDA → modelling → SHAP
 ├─ flower_classifier_app.py   # Streamlit UI
 ├─ requirements.txt
