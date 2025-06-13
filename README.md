@@ -2,10 +2,11 @@
 
 ![CI](https://github.com/shaolinpat/flower_classifier/actions/workflows/ci.yml/badge.svg)
 ![Coverage](https://img.shields.io/codecov/c/github/shaolinpat/flower_classifier)
+[![Coverage Status](https://codecov.io/gh/shaolinpat/flower_classifier/branch/main/graph/badge.svg)](https://codecov.io/gh/shaolinpat/flower_classifier)
+
 ![Python](https://img.shields.io/badge/python-3.11-blue)
 ![License](https://img.shields.io/badge/license-MIT-green)
 ![Colab](https://colab.research.google.com/assets/colab-badge.svg)
-
 
 An end-to-end Iris-dataset classifier with EDA, 8 models, SHAP interpretation, and a Streamlit UI.
 
