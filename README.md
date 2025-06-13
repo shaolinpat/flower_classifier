@@ -32,8 +32,6 @@ A compact end-to-end machine-learning project that:
 
 ---
 
----
-
 ## Key Results
 
 | Metric                        | Score |
