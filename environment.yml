@@ -1,24 +1,14 @@
-name: pydata_book
+name: iris
 channels:
   - conda-forge
   - defaults
 dependencies:
   - python=3.11
-  - ipykernel
-  - tensorflow
-  - cpuonly
-  - pytorch
-  - torchaudio
-  - torchvision
   - pandas
-  - matplotlib
   - scikit-learn
-  - xlrd
-  - lxml
-  - pyarrow
-  - openpyxl
-  - pytables
-  - sqlalchemy
-  - black
-  - shap
-prefix: /home/pbeach/.conda/envs/pydata_book
+  - pytest
+  - pip
+  - pip:
+    - -e .
+    - streamlit
+    - shap
