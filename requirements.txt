@@ -18,3 +18,5 @@ shap>=0.47
 streamlit>=1.0
 joblib>=1.0
 ipywidgets>=7.7
+
+pytest
