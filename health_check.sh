@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# health_check.sh — finds the first badge URL that returns 200 for N checks
+# health_check.sh — finds all badge URLs that return 200 for N checks
 
 # Read URLs
 URLS=()
@@ -13,30 +13,43 @@ SLEEP=5               # seconds between checks
 declare -A count200
 
 iter=0
+
 echo "Testing ${#URLS[@]} badge URLs; need $CONSEC consecutive 200 responses."
 echo
 
 while true; do
   ((iter++))
   echo "=== Iteration $iter at $(date +'%T') ==="
-  echo "=== $(date +'%T') ==="
+
+  # Track which URLs became stable this round
+  stable=()
+
   for url in "${URLS[@]}"; do
     code=$(curl -s -o /dev/null -w "%{http_code}" "$url")
-    printf "  %s  %s\n" "$code" "$url"
+    printf "  %3s  %s\n" "$code" "$url"
+    
     if [[ "$code" == "200" ]]; then
       (( count200["$url"]++ ))
     else
       count200["$url"]=0
     fi
 
-    # If any URL has reached CONSEC consecutive 200s, we declare it stable
+    # If this URL has now reached the threshold, record it
     if (( count200["$url"] >= CONSEC )); then
-      echo
-      echo "✅ Stable badge URL detected (200 for $CONSEC checks):"
-      echo "   $url"
-      exit 0
+      stable+=("$url")
     fi
   done
+
+  # If any URLs are stable, print them all and exit
+  if (( ${#stable[@]} )); then
+    echo
+    echo "✅ The following URLs have been stable for $CONSEC consecutive checks:"
+    for s in "${stable[@]}"; do
+      echo "   $s"
+    done
+    exit 0
+  fi
+
   echo "Sleeping $SLEEP seconds..."
   echo
   sleep "$SLEEP"
