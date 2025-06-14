@@ -21,3 +21,4 @@ ipywidgets>=7.7
 
 pytest
 pytest-cov
+coveralls
