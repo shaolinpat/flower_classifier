@@ -33,3 +33,12 @@ jobs:
         run: |
           pytest --maxfail=1 --disable-warnings -q \
             --cov=flower_classifier --cov-report=xml
+      
+     - name: Upload coverage via Codecov bash uploader
+       env:
+         CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
+       run: |
+         bash <(curl -s https://codecov.io/bash) \
+           -t $CODECOV_TOKEN \
+           -r shaolinpat/flower_classifier \
+           -f coverage.xml
