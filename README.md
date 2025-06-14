@@ -1,10 +1,19 @@
 # Flower-Species Classifier
 
 ![CI](https://github.com/shaolinpat/flower_classifier/actions/workflows/ci.yml/badge.svg)
-[![Coverage](https://codecov.io/github/shaolinpat/flower_classifier/coverage.svg?branch=main)](https://codecov.io/gh/shaolinpat/flower_classifier)
+[![Coverage (flag)](https://img.shields.io/codecov/c/github/shaolinpat/flower_classifier.svg?flag=flower_classifier&branch=main)](https://codecov.io/gh/shaolinpat/flower_classifier)  
+
+[![Coverage (project)](https://img.shields.io/codecov/c/github/shaolinpat/flower_classifier?branch=main)](https://codecov.io/gh/shaolinpat/flower_classifier)  
+
+[![Coverage (JSON)](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fcodecov.io%2Fapi%2Fgh%2Fshaolinpat%2Fflower_classifier%2Fbranch%2Fmain&label=coverage&query=%24.commit.totals.percent&suffix=%25)](https://codecov.io/gh/shaolinpat/flower_classifier)
 
 
 <!-- existing badges left here for now -->
+
+
+[![Coverage](https://codecov.io/github/shaolinpat/flower_classifier/coverage.svg?branch=main)](https://codecov.io/gh/shaolinpat/flower_classifier)
+
+
 
 [![codecov](https://codecov.io/github/shaolinpat/flower_classifier/coverage.svg?branch=main)](https://codecov.io/github/shaolinpat/flower_classifier)
 

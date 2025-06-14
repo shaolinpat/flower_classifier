@@ -1,4 +1,6 @@
 https://codecov.io/github/shaolinpat/flower_classifier/coverage.svg?branch=main
+
+https://codecov.io/github/shaolinpat/flower_classifier/coverage.svg?branch=main
 https://img.shields.io/codecov/c/github/shaolinpat/flower_classifier.svg?flag=flower_classifier&branch=main
 https://img.shields.io/codecov/flag/github/shaolinpat/flower_classifier/flower_classifier.svg?branch=main
 https://img.shields.io/codecov/project/github/shaolinpat/flower_classifier.svg?branch=main
