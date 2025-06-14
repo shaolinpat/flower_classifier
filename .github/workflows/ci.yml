@@ -26,10 +26,10 @@ jobs:
           python -m pip install --upgrade pip setuptools wheel
           pip install -r requirements.txt pytest-cov
 
-      - name: Install your package
+      - name: Install package
         run: pip install -e .
 
-      - name: Run tests & generate coverage report
+      - name: Run tests & generate coverage.xml
         run: |
           pytest --maxfail=1 --disable-warnings -q \
             --cov=flower_classifier --cov-report=xml
