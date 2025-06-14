@@ -34,9 +34,12 @@ jobs:
 
       - name: Upload coverage to Codecov
         uses: codecov/codecov-action@v3
+
+      - name: Upload coverage to Codecov
+        uses: codecov/codecov-action@v3
+        env:
+          CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
+          CODECOV_SLUG: shaolinpat/flower_classifier
         with:
-          token: ${{ secrets.CODECOV_TOKEN }}
           files: coverage.xml
-          owner: shaolinpat
-          repo: flower_classifier
           fail_ci_if_error: true
