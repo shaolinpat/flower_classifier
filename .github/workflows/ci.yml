@@ -28,7 +28,7 @@ jobs:
       - name: Install package
         run: pip install -e .
 
-      - name: Run tests with coverage
+      - name: Run tests & produce coverage.xml
         run: |
           pytest --maxfail=1 --disable-warnings -q \
             --cov=flower_classifier --cov-report=xml
@@ -37,7 +37,7 @@ jobs:
         env:
           CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
         run: |
-          # force upload into the nested slug where Codecov is storing your data
+          # force upload into the nested slug path Codecov has already created
           bash <(curl -s https://codecov.io/bash) \
             -t $CODECOV_TOKEN \
             -r shaolinpat/shaolinpat/flower_classifier \
