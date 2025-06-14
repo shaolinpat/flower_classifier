@@ -1,7 +1,9 @@
 # Flower-Species Classifier
 
 ![CI](https://github.com/shaolinpat/flower_classifier/actions/workflows/ci.yml/badge.svg)
-[![Coverage Status](https://img.shields.io/codecov/c/github/shaolinpat/flower_classifier.svg?branch=main)](https://codecov.io/gh/shaolinpat/flower_classifier)
+[![Coverage Status](https://img.shields.io/codecov/project/github/shaolinpat/flower_classifier?branch=main)](https://codecov.io/gh/shaolinpat/flower_classifier)
+
+
 
 
 ![Python](https://img.shields.io/badge/python-3.11-blue)
