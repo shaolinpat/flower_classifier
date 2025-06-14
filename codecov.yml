@@ -12,6 +12,10 @@ coverage:
     patch:
       default:
         target: 80%
+flags:
+  flower_classifier:
+    paths:
+      - "flower_classifier/**"
 
 ignore:
   - "tests/*"
