@@ -1,0 +1,26 @@
+# codecov.yml
+
+codecov:
+  require_ci_to_pass: yes
+
+coverage:
+  precision: 2
+  round: down
+
+  status:
+    project:
+      default:
+        target: 90%
+    patch:
+      default:
+        target: 80%
+
+ignore:
+  - "tests/*"
+  - "**/scripts/*"
+
+flags:
+  flower_classifier:
+    paths:
+      - "flower_classifier/**"
+
