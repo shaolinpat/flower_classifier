@@ -32,14 +32,11 @@ jobs:
           pytest --maxfail=1 --disable-warnings -q \
             --cov=flower_classifier --cov-report=xml
 
-      - name: Upload coverage to Codecov
-        uses: codecov/codecov-action@v3
-
-      - name: Upload coverage to Codecov
-        uses: codecov/codecov-action@v3
+      - name: Upload coverage via bash uploader
         env:
           CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
-          CODECOV_SLUG: shaolinpat/flower_classifier
-        with:
-          files: coverage.xml
-          fail_ci_if_error: true
+        run: |
+          bash <(curl -s https://codecov.io/bash) \
+            -t $CODECOV_TOKEN \
+            -r shaolinpat/flower_classifier \
+            -f coverage.xml
