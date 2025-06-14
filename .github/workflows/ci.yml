@@ -27,15 +27,9 @@ jobs:
       - name: Install package
         run: pip install -e .
 
-      - name: Run tests with coverage
+      - name: Run tests & upload to Coveralls
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           pytest --maxfail=1 --disable-warnings -q \
             --cov=flower_classifier --cov-report=xml
-
-      - name: Run tests & upload to Coveralls
-        run: |
-          pytest --maxfail=1 --disable-warnings -q \
-            --cov=flower_classifier --cov-report=xml
-          coveralls
