@@ -3,6 +3,8 @@
 ![CI](https://github.com/shaolinpat/flower_classifier/actions/workflows/ci.yml/badge.svg)
 [![Coverage Status](https://codecov.io/gh/shaolinpat/flower_classifier/branch/main/graph/badge.svg)](https://codecov.io/gh/shaolinpat/flower_classifier)
 
+[![Coverage Status](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fcodecov.io%2Fapi%2Fgh%2Fshaolinpat%2Fflower_classifier%2Fbranch%2Fmain&label=coverage&query=%24.commit.totals.percent&suffix=%25)](https://codecov.io/gh/shaolinpat/flower_classifier)
+
 ![Python](https://img.shields.io/badge/python-3.11-blue)
 ![License](https://img.shields.io/badge/license-MIT-green)
 ![Colab](https://colab.research.google.com/assets/colab-badge.svg)
