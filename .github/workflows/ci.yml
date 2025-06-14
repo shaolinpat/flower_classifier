@@ -37,5 +37,6 @@ jobs:
         with:
           token: ${{ secrets.CODECOV_TOKEN }}
           files: coverage.xml
-          slug: shaolinpat/flower_classifier
+          owner: shaolinpat
+          repo: flower_classifier
           fail_ci_if_error: true
