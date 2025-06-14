@@ -11,7 +11,8 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - name: Checkout code
+        uses: actions/checkout@v3
 
       - name: Set up Python 3.11
         uses: actions/setup-python@v4
@@ -36,7 +37,9 @@ jobs:
         env:
           CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
         run: |
+          # force upload into the nested slug where Codecov is storing your data
           bash <(curl -s https://codecov.io/bash) \
             -t $CODECOV_TOKEN \
-            -r shaolinpat/flower_classifier \
+            -r shaolinpat/shaolinpat/flower_classifier \
             -f coverage.xml
+
