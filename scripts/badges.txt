@@ -1,0 +1,10 @@
+https://codecov.io/github/shaolinpat/flower_classifier/coverage.svg?branch=main
+
+https://codecov.io/github/shaolinpat/flower_classifier/coverage.svg?branch=main
+https://img.shields.io/codecov/c/github/shaolinpat/flower_classifier.svg?flag=flower_classifier&branch=main
+https://img.shields.io/codecov/flag/github/shaolinpat/flower_classifier/flower_classifier.svg?branch=main
+https://img.shields.io/codecov/project/github/shaolinpat/flower_classifier.svg?branch=main
+https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fcodecov.io%2Fapi%2Fgh%2Fshaolinpat%2Fflower_classifier%2Fbranch%2Fmain&label=coverage&query=%24.commit.totals.percent&suffix=%25
+https://img.shields.io/codecov/c/github/shaolinpat/flower_classifier?branch=main
+https://codecov.io/gh/shaolinpat/flower_classifier/branch/main/graph/badge.svg
+

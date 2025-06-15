@@ -1,0 +1,25 @@
+# Byte-compiled files
+__pycache__/
+*.py[cod]
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Packaging
+*.egg-info/
+dist/
+build/
+
+# Model files
+models/*.joblib
+
+# Caches
+cache/
+*.joblib
+
+# VSCode
+.vscode/
+
+# Environment
+.env
+.venv/
