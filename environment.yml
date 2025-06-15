@@ -5,10 +5,18 @@ channels:
 dependencies:
   - python=3.11
   - pandas
+  - numpy
+  - matplotlib
+  - seaborn
   - scikit-learn
+  - shap
+  - joblib
+  - jupyter
+  - notebook
+  - nbconvert
+  - ipykernel
   - pytest
   - pip
   - pip:
-    - -e .
-    - streamlit
-    - shap
+      - -e .
+      - streamlit

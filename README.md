@@ -82,19 +82,20 @@ pip install -r requirements.txt
 ```bash
 conda env create -f environment.yml
 conda activate iris
+bash scripts/register_kernel.sh
 ```
 
 ### 2) Run the notebook
 ```bash
-jupyter lab
+jupyter notebook notebooks/flower_classifier.ipynb
 # or in VS Code:
-code flower_classifier.ipynb
+code notebooks/flower_classifier.ipynb
 # or in Colab by clicking the Colab badge at the top
 ```
 
 ### 3) Launch the Streamlit app
 ```bash
-streamlit run flower_classifier_app.py
+streamlit run scripts/steamlit_app.py
 ```
 
 ---
