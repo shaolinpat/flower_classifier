@@ -22,8 +22,8 @@ def load_pipeline(path: pathlib.Path):
 
 
 BASE_DIR = pathlib.Path(__file__).resolve().parent
-PIPELINE_FILE = "support_vector_machines_flower_classification.joblib"
-PIPELINE_PATH = BASE_DIR / "models" / PIPELINE_FILE
+PIPELINE_FILE = "support_vector_machines_flower_classifier.joblib"
+PIPELINE_PATH = BASE_DIR / "../models" / PIPELINE_FILE
 
 pipeline = load_pipeline(PIPELINE_PATH)
 scaler = pipeline.named_steps["scale"]

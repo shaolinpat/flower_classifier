@@ -4,7 +4,7 @@
 [![Coverage (flag)](https://img.shields.io/codecov/c/github/shaolinpat/flower_classifier.svg?flag=flower_classifier&branch=main)](https://codecov.io/gh/shaolinpat/flower_classifier)  
 [![Python 3.11](https://img.shields.io/badge/python-3.11-blue.svg)](https://www.python.org/downloads/release/python-3110/)
 [![License: MIT](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
-[![Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/shaolinpat/flower_classifier/blob/main/notebooks/flower_classifier.ipynb)
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/shaolinpat/flower_classifier/blob/main/notebooks/flower_classifier.ipynb)
 
 
 An end-to-end Iris-dataset classifier with EDA, 8 models, SHAP interpretation, and a Streamlit UI.
@@ -13,8 +13,10 @@ An end-to-end Iris-dataset classifier with EDA, 8 models, SHAP interpretation, a
 
 - [Overview](#overview)
 - [Key Results](#key-results)
+- [Visual Highlights](#visual-highlights)
 - [Features](#features)
 - [Quick Start](#quick-start)
+- [Launch Streamlit](#launch-the-streamlit-app)
 - [Quick Verify](#quick-verify)
 - [File Layout](#file-layout)
 - [Next Steps](#next-steps)
@@ -34,18 +36,58 @@ A compact end-to-end machine-learning project that:
 
 ## Key Results
 
-- Achieved **100% test coverage** (Codecov verified)
-- Trained and compared **8 classification models** (e.g., SVM, KNN, Random Forest)
-- Best model: **Support Vector Machine (SVM)** with **97.3% accuracy**
-- Used **SHAP** for model interpretability and feature impact visualization
-- Delivered an interactive **Streamlit UI** for real-time classification
+While Support Vector Machines (SVM) achieved the highest cross-validated F1 score (0.975),  
+k-Nearest Neighbors (k-NN) obtained the best test set accuracy (96.7%) on the held-out data.
+
+This suggests both models are strong candidates, with SVM showing slightly more consistent generalization.
 
 
-| Metric                        | Score |
-|-------------------------------|-------|
-| Majority-class baseline accuracy  | 0.33  |
-| **Best model (SVM) macro-F1**     | **0.98** |
-| Test accuracy (SVM)               | 0.97  |
+- **Best model**: Support Vector Machines (SVM)  
+  - Cross-validated accuracy: **96.7% ± 2.1%**
+  - Test set accuracy: **93%**
+  - Macro F1-score on test set: **0.93**
+
+- **Per-class performance on test set**:
+  | Class       | Precision | Recall | F1-score |
+  |-------------|-----------|--------|----------|
+  | Setosa      | 1.00      | 1.00   | 1.00     |
+  | Versicolor  | 0.90      | 0.90   | 0.90     |
+  | Virginica   | 0.90      | 0.90   | 0.90     |
+
+- **Model comparison (cross-validation results)**:
+  | Model                  | CV Accuracy | Std Dev |
+  |------------------------|-------------|---------|
+  | Logistic Regression    | 0.960       | 0.039   |
+  | k-Nearest Neighbors    | 0.960       | 0.025   |
+  | Decision Tree          | 0.953       | 0.034   |
+  | Random Forest          | 0.960       | 0.025   |
+  | **Support Vector Machine** | **0.967**   | **0.021** |
+  | Naive Bayes            | 0.953       | 0.027   |
+  | Gradient Boosting      | 0.960       | 0.033   |
+  | Multi-layer Perceptron | 0.667       | 0.178   |
+
+- **Interpretability**: SHAP visualizations explain feature impact on SVM predictions.
+
+---
+
+## Visual Highlights
+
+![Pair Plot](images/pairplot.png)
+
+*Figure: Pairwise scatter plots of Iris features showing clear separation among species.*
+
+![Confusion Matrix](images/confusion_matrix.png)
+
+*Figure: Confusion matrix of the best model (SVM)*
+
+![SHAP Summary](images/shap_summary.png)
+
+*Figure: SHAP summary plot highlighting the most important features influencing predictions.*
+
+![Model Comparison](images/model_comparison_highlighted.png)
+
+*Figure: Test accuracy of all classifiers on the held-out test set. k-NN achieved the highest test accuracy (96.7%), while SVM led on cross-validated F1.*
+
 
 ---
 
@@ -62,50 +104,56 @@ A compact end-to-end machine-learning project that:
 
 ---
 ## Quick Start
+_(Run each command below at the command line, not inside Python or Jupyter)_
 
-### 0) GitHub cloning
+### Run in Google Colab
+Try it now with no setup:
+
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/shaolinpat/flower_classifier/blob/main/notebooks/flower_classifier.ipynb)
+
+
+### Run Locally with Conda
+
+### 1. Clone this repo
 ```bash
 git clone git@github.com:shaolinpat/flower_classifier.git  
 cd flower_classifier  
 ```
 
-### 1) Environment setup
+### 2. Create and activate the environment
 
-#### Option A: Python venv
-```bash
-python -m venv .venv
-source .venv/bin/activate
-pip install -r requirements.txt
-```
-
-#### Option B: Conda (using environment.yml)
 ```bash
 conda env create -f environment.yml
 conda activate iris
 bash scripts/register_kernel.sh
 ```
 
-### 2) Run the notebook
+### 3. Launch the notebook
 ```bash
+# Option 1: Run the notebook in your default web browser
 jupyter notebook notebooks/flower_classifier.ipynb
-# or in VS Code:
-code notebooks/flower_classifier.ipynb
-# or in Colab by clicking the Colab badge at the top
-```
 
-### 3) Launch the Streamlit app
-```bash
-streamlit run scripts/steamlit_app.py
+# Option 2: Open it directly in VS Code (if installed and in your PATH)
+code notebooks/flower_classifier.ipynb
 ```
 
 ---
 
-### Quick Verify
-
-To make sure everything runs end-to-end:
-
+## Launch the Streamlit app
+_(Run the command below at the command line)_
 ```bash
-bash scripts/verify_run.sh
+streamlit run scripts/streamlit_app.py
+```
+
+---
+
+## Quick Verify
+
+To make sure everything runs end-to-end.
+
+_(Run the command below at the command line)_
+```bash
+scripts/verify_run.sh
 ```
 
 ---
@@ -117,6 +165,11 @@ flower_classifier/
 ├── flower_classifier/ # Python package
 │ ├── init.py
 │ └── data_prep.py
+├── images
+│ ├── confusion_matrix.pngy
+│ ├── model_comparison_highlighted.png
+│ ├── pairplot.png
+│ └── shap_summary.png
 ├── notebooks/
 │ └── flower_classifier.ipynb
 ├── scripts/
@@ -125,7 +178,7 @@ flower_classifier/
 │ └── badges.txt
 ├── tests/
 │ └── test_data_prep.py
-├── models/ # .gitignored
+├── models/ # .gitignored, but running the notebook will recreate them
 ├── .github/
 │ └── workflows/
 │ └── ci.yml
@@ -141,32 +194,27 @@ flower_classifier/
 
 ## Next Steps
 
-- **Colab Support**  
-  Added an “Open in Colab” badge and notebook with install instructions  
-  _(Tip: consider using a lightweight `requirements-colab.txt` for speed)_
+- **Testing Enhancements**  
+  - Expand `pytest` coverage for data transformation, model loading, and inference paths  
+  - Optionally add mocked tests for Streamlit routing and input handling
 
-- **Continuous Integration (CI)**  
-  GitHub Actions workflow configured to:
-  - Install dependencies
-  - Run `pytest`
-  - Execute notebook via `nbconvert`
-  - (Optional) Smoke test Streamlit app launch
+- **Visualization & Documentation**  
+  - Add more visual examples (e.g., Shap beeswarm, yellowbrick classification report)  
+  - Improve inline comments and function docstrings for maintainability  
+  - Consider modularizing parts of the notebook into standalone Python scripts
 
-- **Unit Testing Improvements**  
-  - Add more `pytest` coverage for data transformation, model loading, and inference
-  - Consider adding tests for Streamlit routing logic (mocked if needed)
+- **Deployment & Packaging Improvements**  
+  - Add CLI interface using `argparse` for batch predictions  
+  - Create a `Dockerfile` for containerized builds and consistent deployment  
+  - (Optional) Upload a demo video or GIF to README to showcase usage visually
 
-- **Documentation & Polish**  
-  - Add sample output screenshots (EDA, SHAP, model results)
-  - Improve docstrings and inline comments
-  - Refactor notebook into shorter modular scripts if needed
+- **Streamlit & Colab UX**  
+  - Refine Streamlit UI with better validation and help text  
+  - Maintain Colab compatibility using a lightweight `requirements-colab.txt`
 
-- **Optional Enhancements**  
-  - Add a CLI with `argparse` for batch predictions
-  - Add Dockerfile for reproducible deployment
-  - Upload demo video/gif to the README
-
-
+- **Stretch Goals**  
+  - Host the Streamlit app on Streamlit Community Cloud for live demos  
+  - Add automatic model versioning or retraining hooks
 ---
 
 ## 📝 License
@@ -174,4 +222,4 @@ flower_classifier/
 This project is licensed under the [MIT License](LICENSE).
 
 
-*Built with scikit-learn 1.5 · Streamlit 1.33 · Python 3.11*  
+*Built with scikit-learn 1.6 · Streamlit 1.33 · Python 3.11*
