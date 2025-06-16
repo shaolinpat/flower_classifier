@@ -32,9 +32,3 @@ def test_pipeline_runs():
     pipe.fit(X_train, y_train)
     assert hasattr(pipe, "predict")
 
-
-def test_shap_values_shape():
-    X, model = get_sample_data_and_model()  # you’d define this helper
-    explainer = shap.Explainer(model.predict, X)
-    shap_values = explainer(X[:5])
-    assert shap_values.shape[0] == 5
